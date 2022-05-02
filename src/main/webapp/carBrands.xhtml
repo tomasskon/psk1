@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+>
+<h:head/>
+<h:body>
+    <h2>Car brands:</h2>
+    <ol>
+        <ui:repeat value="#{carBrands.allCarBrands}" var="carBrand">
+            <li><h:link value="#{carBrand.brand}"/></li>
+        </ui:repeat>
+    </ol>
+    <h:form>
+        <div style="padding-bottom: 3px">
+            <h:outputText value="Brand: "/>
+            <h:inputText value="#{carBrands.carBrandToCreate.brand}" required="true" />
+        </div>
+
+        <h:commandButton value="Add new car brand" action="#{carBrands.createCardBrand}"/>
+    </h:form>
+</h:body>
+</html>

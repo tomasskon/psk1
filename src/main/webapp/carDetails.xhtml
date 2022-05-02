@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core"
+>
+<h:head/>
+<h:body>
+    <h2>#{carDetails.carDetail.carBrand.brand} #{carDetails.carDetail.model}</h2>
+    <h:form>
+        <h2>Previous rentings:</h2>
+        <ol>
+            <ui:repeat value="#{carDetails.carDetail.customerSet}" var="customer">
+                <li><h:link value="#{customer.name} #{customer.lastName}" outcome="myBatis/customerDetails?customerId=#{customer.id}"/></li>
+            </ui:repeat>
+        </ol>
+    </h:form>
+</h:body>
+</html>

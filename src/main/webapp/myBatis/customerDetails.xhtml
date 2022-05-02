@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+>
+<h:head/>
+<h:body>
+    <h2>#{customerDetailsMyBatis.customerToUpdate.name}</h2>
+    <h:form>
+        <div style="padding-bottom: 3px">
+            <h:outputText value="Name: "/>
+            <h:inputText a:placeholder="enter the value" value="#{customerDetailsMyBatis.customerToUpdate.name}" required="true" />
+        </div>
+        <br />
+
+        <div style="padding-bottom: 3px">
+            <h:outputText value="Lastname: "/>
+            <h:inputText a:placeholder="enter the value" value="#{customerDetailsMyBatis.customerToUpdate.lastname}" required="true" />
+        </div>
+        <br />
+
+        <div style="padding-bottom: 3px">
+            <h:outputText value="Age: "/>
+            <h:inputText a:placeholder="enter the value" value="#{customerDetailsMyBatis.customerToUpdate.age}" required="true" />
+        </div>
+        <br />
+
+        <div style="padding-bottom: 3px">
+            <h:outputText value="Id: "/>
+            <h:inputText readonly="true" value="#{customerDetailsMyBatis.customerToUpdate.id}" />
+        </div>
+        <br />
+
+        <h:commandButton value="update" action="#{customerDetailsMyBatis.updateCustomer}">
+            <f:param name="customerId" value="#{customerDetailsMyBatis.customerToUpdate.id}" />
+        </h:commandButton>
+    </h:form>
+</h:body>
+</html>
