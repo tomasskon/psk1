@@ -59,6 +59,7 @@ public class CustomerController {
             customer.setName(customerDTO.getName());
             customer.setLastName(customerDTO.getLastName());
             customer.setAge(customerDTO.getAge());
+            customerDAO.persist(customer);
 
             return Response.ok().build();
         }catch (OptimisticLockException ex){
