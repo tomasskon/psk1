@@ -30,6 +30,12 @@
         <br />
 
         <h:commandButton value="Add new rental" action="#{rentals.createRental}" />
+
+        <h:commandButton value="Find free tachka" action="#{findCar.findFreeCar(cars.allCars)}" />
+
+        <div>
+            <h:outputText value="#{findCar.findCarStatus}" />
+        </div>
     </h:form>
 </h:body>
 </html>

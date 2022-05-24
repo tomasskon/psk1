@@ -30,6 +30,10 @@ public class Customer {
     @Column(name = "AGE")
     private int age;
 
+    @Version
+    @Column(name = "OPT_LOCK_VERSION")
+    private Integer version;
+
     @ManyToMany
     @JoinTable(
             name = "rental",

@@ -9,4 +9,10 @@
     <interceptors>
         <class>vu.lt.interceptors.MethodLogger</class>
     </interceptors>
+    <decorators>
+        <class>vu.lt.decorators.RentalServiceDecorator</class>
+    </decorators>
+<!--    <alternatives>-->
+<!--        <class>vu.lt.services.RecommendedCarService</class>-->
+<!--    </alternatives>-->
 </beans>
